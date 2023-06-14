@@ -1,0 +1,20 @@
+/**
+ * A function that traverses a binary tree in-order
+ * 
+ * @param root A pointer to the root node of the binary tree
+ * @param result A vector to store the in-order traversal result
+ */
+void traverseBinaryTree(Node* root, std::vector<int>& result) {
+    if (root == nullptr) {
+        return;
+    }
+    
+    // Traverse left subtree
+    traverseBinaryTree(root->left, result);
+    
+    // Add current node value to result
+    result.push_back(root->value);
+    
+    // Traverse right subtree
+    traverseBinaryTree(root->right, result);
+}
